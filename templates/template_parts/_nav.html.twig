@@ -1,0 +1,91 @@
+<div
+	class="my-container">
+	<!-- NAVIGATION STARTS -->
+	<div class="nav">
+	{# <p>{{ app.user.name }}</p> #}
+		<div class="menu-open">
+			<ion-icon name="menu"></ion-icon>
+		</div>
+		<div class="brand">
+			<span>
+				<a href="{{ path ("home") }}">
+					<img style="width:25%;" src="{{ asset ("assets/img/logo.png") }}" alt=""></a>
+			</span>
+		</div>
+		
+		{% if app.user %}
+			<div style="z-index: 2;"  class="cart">
+				Hi {{ app.user.name }} !
+				<a href="{{ path('app_logout') }}" style="font-size:1.2em; margin-right: 3em">
+					<ion-icon name="rocket" style="color:black"></ion-icon>
+				</a>
+			</div>
+
+		<div style="z-index: 3;" class="cart">
+			<a href="{{ path ('panier') }}" style="font-size:1.2em;">
+				<ion-icon name="cart" style="color:black"></ion-icon>
+			</a>
+		</div>
+		<div class="cart" style="z-index: 2;" >
+			<a href="{{ path ('client') }}" style="font-size:1em; margin-right: 2em">
+				<ion-icon name="settings" style="color:black"></ion-icon>
+			</a>
+		</div>
+		{% else %}
+			<div class="signup">
+				<a href="{{ path ('app_register') }}">
+					<ion-icon name="key"></ion-icon>
+				</a>
+			</div>
+			<div   class="login">
+				<a href="{{ path ('app_login') }}">
+					<ion-icon name="log-in"></ion-icon>
+				</a>
+			</div>
+		{% endif %}
+
+		<div class="menu">
+			<div class="menu-close">
+				<ion-icon name="close"></ion-icon>
+			</div>
+			<ul>
+				<li>
+					<a href="{{ path ('home') }}"><img style="width:50%;" src="{{ asset ("assets/img/logo.png") }}" alt=""></li>
+					<br><br></li>
+				<li>
+					<a href="{{ path ('home') }}">Accueil</a>
+				</li>
+				<li>
+					<a href="{{ path ('collection') }}">Notre Collection</a>
+				</li>
+				<li>
+					<a href="{{ path ('produits') }}">Produits</a>
+				</li>
+				<li>
+					<a href="{{ path ('histoire') }}">Notre Histoire</a>
+				</li>
+				<li>
+					<a href="{{ path ('blog') }}">Blog</a>
+				</li>
+				<li>
+					<a href="{{ path ('contact') }}">Contacts</a>
+				</li>
+			</ul>
+			<div class="media-menu">
+				<ul>
+					<li>
+						<ion-icon name="logo-facebook"></ion-icon>
+					</li>
+					<li>
+						<ion-icon name="logo-instagram"></ion-icon>
+					</li>
+					<li>
+						<ion-icon name="logo-twitter"></ion-icon>
+					</li>
+					<li>
+						<ion-icon name="logo-linkedin"></ion-icon>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>

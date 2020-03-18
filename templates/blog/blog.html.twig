@@ -1,0 +1,233 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+
+<style>
+    .pb-100 {
+	padding-bottom: 100px;
+}
+.pt-100 {
+	padding-top: 100px;
+}
+.mb-100 {
+	margin-bottom: 100px;
+}
+a {
+	text-decoration: none;
+	color: rgb(206, 206, 206);
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+.section-title {
+	position: relative;
+}
+.section-title p {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+}
+.section-title h4 {
+	font-size: 40px;
+	font-weight: 600;
+	text-transform: capitalize;
+	position: relative;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+.section-title h4::before {
+	position: absolute;
+	content: "";
+	width: 80px;
+	height: 2px;
+	background-color: #ffffff;
+	bottom: 0;
+	left: 50%;
+	margin-left: -40px;
+}
+.section-title h4::after {
+	position: absolute;
+	content: "";
+	width: 50px;
+	height: 2px;
+	background-color: rgb(136, 136, 136);
+	left: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+.blog-img {
+	position: relative;
+}
+.blog-img img {
+	width: 100%;
+}
+.post-category a {
+	display: inline-block;
+	background-color: rgba(158, 158, 158, 0.466);
+	color: #fff;
+	font-size: 15px;
+	padding: 5px 20px;
+}
+.single-blog:hover img {
+	opacity: .85;
+}
+.post-category {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+   
+}
+.blog-content {
+	padding: 30px 20px;
+}
+.single-blog {
+	border: 1px solid rgb(255, 255, 255);
+}
+.blog-title h4 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.meta ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.meta {
+	margin-bottom: 20px;
+	opacity: .85;
+}
+.blog-content a.box_btn {
+	display: inline-block;
+	background-color: rgb(51, 51, 51);
+	padding: 5px 15px;
+	color: #fff;
+	text-transform: capitalize;
+	margin-top: 20px;
+}
+a.box_btn::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgb(87, 87, 87);
+	left: -100%;
+	top: 0;
+	-webkit-transition: .5s;
+	transition: .5s;
+	z-index: -1;
+}
+a.box_btn {
+	overflow: hidden;
+	z-index: 2;
+	-webkit-transition: .5s;
+	transition: .5s;
+	position: relative;
+	text-decoration:none;
+}
+a.box_btn:hover::before {
+	left: 0;
+	z-index: -1;
+}
+
+</style>
+
+
+	<div class="about-hero">
+		<div class="container-fluid hero wow fadeInUp">
+			<h1 id="hero-title">
+				- Blog -
+			</h1>
+		</div>
+
+
+        <section class="blog-me pt-100 pb-100" id="blog">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-6 mx-auto text-center">
+                  <div class="section-title mb-100">
+                     <h4>latest blogs</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 col-md-6">
+                  <!-- Single Blog -->
+                  <div class="single-blog">
+                     <div class="blog-img">
+                        <img src="{{ asset ('assets/img/rum-1.png') }}" alt="">
+                        <div class="post-category">
+                           <a href="#">PIRATES</a>
+                        </div>
+                     </div>
+                     <div class="blog-content">
+                        <div class="blog-title">
+                           <h4><a href="#">Mobilies UX Treend</a></h4>
+                           <div class="meta">
+                              <ul>
+                                 <li>04 June 2018</li>
+                              </ul>
+                           </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
+                        <a href="#" class="box_btn">read more</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <!-- Single Blog -->
+                  <div class="single-blog">
+                     <div class="blog-img">
+                        <img src="{{ asset ('assets/img/rum-2.jpg') }}" alt="">
+                        <div class="post-category">
+                           <a href="#">Black Eight</a>
+                        </div>
+                     </div>
+                     <div class="blog-content">
+                        <div class="blog-title">
+                           <h4><a href="#">Mobilies UX Treend</a></h4>
+                           <div class="meta">
+                              <ul>
+                                 <li>23 June 2018</li>
+                              </ul>
+                           </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
+                        <a href="#" class="box_btn">read more</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <!-- Single Blog -->
+                  <div class="single-blog">
+                     <div class="blog-img">
+                        <img src="{{ asset ('assets/img/rum-3.jpg') }}" alt="">
+                        <div class="post-category">
+                           <a href="#">Rum New</a>
+                        </div>
+                     </div>
+                     <div class="blog-content">
+                        <div class="blog-title">
+                           <h4><a href="#">Mobilies UX Treend</a></h4>
+                           <div class="meta">
+                              <ul>
+                                 <li>31 July 2018</li>
+                              </ul>
+                           </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
+                        <a href="#" class="box_btn">read more</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+	</div>
+
+
+{% endblock %}

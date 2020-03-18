@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}RhumeSug{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href=" {{ asset ("assets/css/style.css") }} ">
+        <link rel="stylesheet" href=" {{ asset ("assets/css/animate.css") }} ">
+        <link rel="stylesheet" href=" {{ asset ("assets/css/login.css") }} ">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+ 
+            {% include "template_parts/_nav.html.twig" %}
+  
+
+
+        {% block body %}{% endblock %}
+     
+        {% include "template_parts/_footer.html.twig" %}
+
+        {% block javascripts %}{% endblock %}
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- icon pack -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <!-- tweenmax (greensock) cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+        <!-- for scroll animations -->
+        <script src="{{asset ('assets/js/wow.min.js')}}"></script>
+        <script src="{{asset ('assets/js/login.js')}}"></script>
+        <script src="{{asset ('assets/js/revealwow.js')}}"></script>
+        <script src="{{asset ('assets/js/scroll.js')}}"></script>
+        <script src="{{asset ('assets/js/toggle.js')}}"></script>
+       
+    </body>
+</html>

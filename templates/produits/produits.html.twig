@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits{% endblock %}
+
+{% block body %}
+
+
+<div class="about-hero">
+    <div class="container-fluid hero wow fadeInUp">
+        <h1 id="hero-title">
+            NOS PRODUITS
+        </h1>
+    </div>
+
+
+    <!-- PRODUCT LIST STARTS -->
+
+    <div class="section prod-list">
+        <div class="container-fluid">
+            <div class="row some-cards">
+                {% for produit in produits %}    
+                             
+                <div class="col-lg-3 prod wow fadeInUp" data-wow-delay="0.5s">
+                    <a href='#'>
+                        <h4 id="produit-name">{{ produit.name }}</h4>
+                        <p id="price">{{ produit.price }} €</p>
+                        <img src="{{ produit.image }}" alt="">
+                        <p id="prod-desc">{{ produit.description }}</p>
+                    </a>
+                    <form class="form-group" method="POST" action="{{ path('add', { 'id': produit.id } ) }}">
+                        <input class="form-control form-control-sm" type="number" name="qte" value="1" min="0" max="10" step="1">
+                        {% if (app.user)%}
+                        <input type="submit" name="submit" class="btnSubmit" value="Add to Cart">
+                        {% else %}
+                        <a href="{{ path('app_login') }}">Login to Order Your Rum</a>
+                        {% endif %}
+
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

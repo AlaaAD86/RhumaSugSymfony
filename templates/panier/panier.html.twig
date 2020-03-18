@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Cart{% endblock %}
+
+{% block body %}
+
+
+<div class="about-hero">
+    <div class="container-fluid hero wow fadeInUp">
+        <h1 id="hero-title">
+            YOUR CART
+        </h1>
+    </div>
+<div class="container">
+    <table class="table wow fadeInUp">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%set total = 0 %}
+          {% for panier in paniers %}
+          <tr>
+            
+            <td>{{ panier.produit.id }}</td>
+            <td>{{ panier.produit.description }}</td>
+            <td class="text-center">{{ panier.qte }}</td>
+            <td class="text-center">
+              {{ panier.produit.price  * panier.qte }} €
+              </td>
+              <td class="text-center"><a href="{{ path('remove', {'id': panier.id}) }}">delete</a></td>
+          </tr>
+
+          {% set total = panier.produit.price  * panier.qte + total %}
+
+          {% endfor %}
+          <td class="text-center" colspan="2"></td>
+          <td class="text-center" style="font-size: 1.5em; font-weight: bold; vertical-align: center;" >Total</td>
+          <th class="text-center" scope="col-6" style="font-size: 1.1em; font-weight: bold; text-align: center; padding: 1em;">{{ total }}€</th>
+        </tbody>
+        
+      </table>
+
+      <div class="add-prod wow fadeInUp" data-wow-delay="0.2s">
+        <a href="{{ path('commande') }}" style="font-size: 0.8em;">Passer La Commande</a>
+    </div>
+
+    </div>
+{% endblock %}

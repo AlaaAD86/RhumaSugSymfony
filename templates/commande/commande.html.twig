@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Your Commands{% endblock %}
+
+
+{% block body %}
+
+	<div class="about-hero">
+		<div class="container-fluid hero wow fadeInUp">
+			<h1 id="hero-title">
+				YOUR COMMANDS
+			</h1>
+		</div>
+
+		<!-- PRODUCT STARTS HERE --> 
+		
+		<div class="container-fluid">
+			<div class="row product-sec">
+				{%set total = 0 %}
+				{% for panier in paniers %}
+				<div class="col-lg-4 prod-left">
+                    <div class="hero-image">
+						<img src="{{ panier.image }}" data-wow-delay="1s" class="img wow fadeInUp" alt=""/>
+					</div>
+
+					<h3 id="prod-name" class="wow fadeInUp text-center" data-wow-delay="0.4s">
+						{{ panier.produit.name}}
+					</h3>
+
+					<p class="wow fadeInUp text-center" data-wow-delay="0.5s">Qte: {{ panier.qte }}
+					</p>
+
+					<p id="price" class="wow fadeInUp text-center" data-wow-delay="0.6s">  {{ panier.produit.price  * panier.qte }} €</p>
+
+					<div class="add-prod wow fadeInUp text-center" data-wow-delay="0.8s">
+						<a href="{{ path('remove', {'id': panier.id}) }}" style="font-size: 0.8em;">
+							Delete product
+							<ion-icon name="trash"></ion-icon>
+						</a>
+					</div>
+				</div>
+				{% set total = panier.produit.price  * panier.qte + total %}
+
+				{% endfor %}
+
+			</div>
+		</div>
+
+		<!-- PRODUCT ENDS HERE -->
+
+
+		<div class="add-prod wow fadeInUp" data-wow-delay="1.1s">
+			<a href="{{ path('payment') }}" style="font-size: 0.8em;">BUY NOW</a>
+		</div>
+
+	</div>
+
+{% endblock %}

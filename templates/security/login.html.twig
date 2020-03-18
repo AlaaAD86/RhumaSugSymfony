@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+
+    <div class="about-hero">
+        <div class="container-fluid hero signup-form wow fadeInUp">
+    
+            <h1 id="hero-title">- Se Connecter -<br> Rhuma Sug</h1>
+            <img src="{{ asset('assets/img/logo.png') }}" alt=""></<img>
+  
+        </div>
+        <form method="post">
+        <div class="container login-container wow fadeInUp">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Se Connecter</h3>
+                    <form method="post" action="#">
+                    
+                        <div class="form-group">
+                            <input class="form-control" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus />
+                        </div>
+                        <div class="form-group">
+                            <input  type="password" name="password" id="inputPassword" class="form-control" required class="form-control" placeholder="password"/>
+                          
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Mot de passe oublié?</a>
+                        </div>
+
+{% if error %}
+<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
+</form>
+
+
+
+
+{# 
+{% if app.user %}
+<div class="mb-3">
+   Bonjour {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+</div>
+{% endif %} #}
+
+
+
+
+
+
+{# <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+<label for="inputEmail">Email</label>
+<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+<label for="inputPassword">Password</label>
+<input type="password" name="password" id="inputPassword" class="form-control" required>
+
+<input type="hidden" name="_csrf_token"
+   value="{{ csrf_token('authenticate') }}"
+> #}
+
+{#
+Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+See https://symfony.com/doc/current/security/remember_me.html
+
+<div class="checkbox mb-3">
+    <label>
+        <input type="checkbox" name="_remember_me"> Remember me
+    </label>
+</div>
+#}
+
+
+{% endblock %}

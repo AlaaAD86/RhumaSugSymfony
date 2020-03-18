@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client Information{% endblock %}
+
+{% block body %}
+
+
+<div class="about-hero">
+    <div class="container-fluid hero signup-form wow fadeInUp" >
+      
+        <h1 id="hero-title">Personal Info</h1>
+        <img src="../img/logo.png" alt=""></<img>
+    </div>
+
+    
+
+    <div class="container content" style="margin:auto;">
+        <p class="wow fadeInUp">Edit your Personal Information</p>
+
+        <form action="{{ path('client') }}" method="POST">
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name='name' value="{{ app.user.name }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" value="{{ app.user.lastName }}" class='form-control wow fadeInUp'>
+
+            </div>                 
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email"  value="{{ app.user.email }}" class='form-control wow fadeInUp' readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Telephone</label>
+                <input type="text" name="telephone"  value="{{ app.user.telephone }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="form-group">
+                <label>Adress</label>
+                <input type="text" name="adress"  value="{{ app.user.adress }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input type="text" name="postalCode"  value="{{ app.user.postalCode }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" name="city"  value="{{ app.user.city }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" name="country"  value="{{ app.user.country }}" class='form-control wow fadeInUp'>
+            </div>
+
+            <div class="add-prod wow fadeInUp" data-wow-delay="0.2s">
+                <button type="submit" name="submit">UPDATE</button>
+                <br>
+                <br>
+                <br>
+            </div>
+           
+       
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="about-hero">
+    <div class="container-fluid hero signup-form wow fadeInUp" >
+      
+        <h1 id="hero-title">Be Part of Our Familye <br> Rhuma Sug</h1>
+        <img src="../img/logo.png" alt=""></<img>
+    </div>
+
+    
+
+    <div class="container content" style="margin:auto;">
+        <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat expedita minus accusantium facere placeat magnam maiores nulla magni dolore blanditiis eligendi, aliquam odio voluptates cum ut officia sit nemo.</p>
+
+        {{ form_start(registrationForm) }}
+
+            <div class="form-group">
+                {{ form_row(registrationForm.name, {'label': 'First Name*', 'attr':{'class':'form-control wow fadeInUp'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.lastName, {'label': 'Last Name*', 'attr':{'class':'form-control wow fadeInUp'}}) }}
+
+            </div>                 
+
+            <div class="form-group">
+                {{ form_row(registrationForm.email, {'label': 'Email*', 'attr':{'class':'form-control wow fadeInUp'}}) }}
+            </div>
+
+             <div class="form-group">
+                {{ form_row(registrationForm.plainPassword, {'label': 'Password*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.telephone, {'label': 'Telephone', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.adress, {'label': 'Adress*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.postalCode, {'label': 'Postal Code*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.city, {'label': 'City*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+
+            </div>
+
+            <div class="form-group">
+                {{ form_row(registrationForm.country, {'label': 'Country*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+
+            </div>
+
+          
+            <div class="form-check">
+               
+                {{ form_row(registrationForm.majeur, {'label': 'I declare having +18 yo*', 'attr':{'class':'form-control wow fadeInUp'}} )}}
+            </div>
+            <div class="add-prod wow fadeInUp" data-wow-delay="0.2s">
+                <button type="submit" name="submit">S'INSECRIR</button>
+                <br>
+                <br>
+                <br>
+                <p>* Champs requis</p>
+            </div>
+           
+       
+            {{ form_end(registrationForm) }}
+    </div>
+</div>
+
+
+
+    {# {{ form_row(registrationForm.email) }} #}
+        {# <button class="btn">Register</button> #}
+    
+{% endblock %}
